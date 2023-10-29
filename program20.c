@@ -4,10 +4,13 @@
 
 int isPalindrome(char* str) {
     int length = strlen(str);
-    for (int i = 0; i < length / 2; i++) {
-        if (str[i] != str[length - i - 1]) {
+    int low=0, high = length-1;
+    while (high>low)
+    {
+        if(str[low] != str[high])
             return 0;
-        }
+        high--;
+        low++;
     }
     return 1;
 }
